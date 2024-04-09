@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "qt-gruenhagen-browser"
+version = "0.1.0"
+description = ""
+authors = ["Malachi Gruenhagen <68450431+nurse-the-code@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "qt_gruenhagen_browser"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
