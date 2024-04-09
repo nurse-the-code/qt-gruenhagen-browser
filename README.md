@@ -10,6 +10,29 @@ browser development, focusing on UI/UX customization and managing cookies and lo
 - **UI/UX Focus:** Experiment with different user interface and user experience designs.
 - **Cookie and Storage Management:** Improve control over cookies and local data.
 
+### Features to Implement
+
+#### High Priority Initial Features
+
+- [ ] Address bar
+- [ ] Forward and back buttons
+- [ ] Dev tools (will unlock more features to implement)
+
+#### Additional Core Features
+
+- [ ] Tabbed browsing
+- [ ] Bookmarks
+- [ ] History
+- [ ] Private browsing and profile management
+- [ ] Cookie management
+- [ ] Local storage management
+- [ ] Download manager
+- [ ] Dark mode
+- [ ] Ability
+- [ ] Plugin support (manifest v2 and v3 -- not sure if this is feasible with QtWebEngine)
+- [ ] Password manager (ideally BitWarden integration -- implementation depends on if plugin support is possible)
+- [ ] Ad blocker (ideally uBlock Origin, if plugin support is possible)
+
 ## Technologies
 
 - **[Python:](https://www.python.org/)** The main programming language used.
