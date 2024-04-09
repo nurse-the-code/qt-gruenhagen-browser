@@ -1,8 +1,8 @@
 # qt-gruenhagen-browser
 
 This is qt-gruenhagen-browser, a project I've started to create a web browser that suits my personal needs. It's built
-with Python and PyQt6, including pyqt6-webengine-qt6 for web content rendering. The goal is to learn and experiment with
-browser development, focusing on UI/UX customization and managing cookies and local storage.
+on top of Qt for Python and Qt WebEngine. The goal is to learn and experiment with browser development, focusing on
+UI/UX customization and managing cookies and local storage.
 
 ## Project Goals
 
