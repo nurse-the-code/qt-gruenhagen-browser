@@ -1,0 +1,12 @@
+# JetBrains PyCharm files
+.idea/
+
+# MacOS files
+.DS_Store
+
+# Python files
+*.pyc
+__pycache__/
+
+# Virtual environment
+venv/

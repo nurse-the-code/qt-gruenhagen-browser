@@ -5,9 +5,11 @@ description = ""
 authors = ["Malachi Gruenhagen <68450431+nurse-the-code@users.noreply.github.com>"]
 readme = "README.md"
 packages = [{include = "qt_gruenhagen_browser"}]
+license = "GPL-3.0-only"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "3.12"
+pyside6 = "^6.6.3.1"
 
 
 [build-system]
