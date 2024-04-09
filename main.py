@@ -1,16 +1,22 @@
-# This is a sample Python script.
-
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+import sys
+from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtCore import QUrl
+from PySide6.QtWebEngineWidgets import QWebEngineView
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+class PicoBrowser(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.browser = QWebEngineView()  # Create a QWebEngineView object
+        self.browser.setUrl(QUrl("https://github.com/nurse-the-code/qt-gruenhagen-browser"))  # Load a web page
+        self.setCentralWidget(self.browser)  # Set the browser as the central widget
+        self.showMaximized()  # Maximize the window
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+if __name__ == "__main__":
+    # Initialize the QApplication
+    app = QApplication(sys.argv)
+    # Create an instance of the PicoBrowser
+    pico_browser = PicoBrowser()
+    # Execute the application and exit when the user closes the window
+    sys.exit(app.exec())
