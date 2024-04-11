@@ -14,21 +14,26 @@ UI/UX customization and managing cookies and local storage.
 
 #### High Priority Initial Features
 
-- [ ] Address bar
+- [x] Address bar
 - [ ] Forward and back buttons
 - [ ] Dev tools (will unlock more features to implement)
 
 #### Additional Core Features
 
 - [ ] Tabbed browsing
+- [ ] Workspaces (groups of tabs)
 - [ ] Bookmarks
 - [ ] History
-- [ ] Private browsing and profile management
+- [ ] Private browsing (by default) and profile management
+- [ ] New profile for each tab by default, but with ability to link multiple tabs to a single profile
+- [ ] Prompt to save tab/profile on close
+- [ ] Prompt to open a new tab when navigating to a new domain
 - [ ] Cookie management
 - [ ] Local storage management
 - [ ] Download manager
 - [ ] Dark mode
-- [ ] Ability
+- [ ] URL error handling in the address bar
+- [ ] Search engine selection (I want to experiment with requiring manual selection of search engine for each search)
 - [ ] Plugin support (manifest v2 and v3 -- not sure if this is feasible with QtWebEngine)
 - [ ] Password manager (ideally BitWarden integration -- implementation depends on if plugin support is possible)
 - [ ] Ad blocker (ideally uBlock Origin, if plugin support is possible)

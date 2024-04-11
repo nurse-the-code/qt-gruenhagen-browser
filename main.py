@@ -1,22 +1,27 @@
 import sys
-from PySide6.QtWidgets import QApplication, QMainWindow
-from PySide6.QtCore import QUrl
-from PySide6.QtWebEngineWidgets import QWebEngineView
+from PySide6.QtWidgets import QApplication
+
+from navigation_system import NavigationSystem
+from widgets import BrowserWindow
+
+user_preferences = {
+    "homepage": "https://github.com/nurse-the-code/qt-gruenhagen-browser"
+}
 
 
-class PicoBrowser(QMainWindow):
+class QtGruenhagenBrowser:
     def __init__(self):
-        super().__init__()
-        self.browser = QWebEngineView()  # Create a QWebEngineView object
-        self.browser.setUrl(QUrl("https://github.com/nurse-the-code/qt-gruenhagen-browser"))  # Load a web page
-        self.setCentralWidget(self.browser)  # Set the browser as the central widget
-        self.showMaximized()  # Maximize the window
+        # Initialize the QApplication
+        self._qt_app = QApplication(sys.argv)
+        self._user_preferences = user_preferences
+        self._navigation_system = NavigationSystem(self._user_preferences["homepage"])
+        self._browser_window = BrowserWindow(self._navigation_system)
+
+    def run(self):
+        # Execute the application and exit when the user closes the window
+        sys.exit(self._qt_app.exec())
 
 
 if __name__ == "__main__":
-    # Initialize the QApplication
-    app = QApplication(sys.argv)
-    # Create an instance of the PicoBrowser
-    pico_browser = PicoBrowser()
-    # Execute the application and exit when the user closes the window
-    sys.exit(app.exec())
+    browser = QtGruenhagenBrowser()
+    browser.run()
