@@ -7,7 +7,7 @@ from navigation_system import NavigationSystem
 class AddressBar(QLineEdit):
     def __init__(self, navigation_system: NavigationSystem):
         super().__init__()
-        self._navigation_system = navigation_system
+        self._navigation_system: NavigationSystem = navigation_system
         self.setText(navigation_system.current_url)
         self._navigation_system.url_changed.connect(self.on_url_changed)
 

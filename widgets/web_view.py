@@ -7,7 +7,7 @@ from navigation_system import NavigationSystem
 class WebView(QWebEngineView):
     def __init__(self, navigation_system: NavigationSystem):
         super().__init__()
-        self._navigation_system = navigation_system
+        self._navigation_system: NavigationSystem = navigation_system
         self.setUrl(QUrl(navigation_system.home_url))
         self._navigation_system.url_changed.connect(self.on_navigation_url_changed)
         self.urlChanged.connect(self.on_web_view_url_changed)

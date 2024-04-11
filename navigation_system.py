@@ -18,7 +18,7 @@ class NavigationSystem(QObject):
         return self._current_url
 
     def navigate_to(self, url: str) -> None:
-        self._current_url = self._urlify(url)
+        self._current_url: str = self._urlify(url)
         self.url_changed.emit(self._current_url)
 
     def navigate_home(self) -> None:
