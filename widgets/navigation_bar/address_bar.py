@@ -1,22 +1,22 @@
-from PySide6.QtCore import Slot, Qt
+from PySide6.QtCore import Qt, QUrl, Slot
 from PySide6.QtWidgets import QLineEdit
 
-from navigation_system import NavigationSystem
+from services import BrowsingContext
 
 
 class AddressBar(QLineEdit):
-    def __init__(self, navigation_system: NavigationSystem):
+    def __init__(self, browsing_context: BrowsingContext):
         super().__init__()
-        self._navigation_system: NavigationSystem = navigation_system
-        self.setText(navigation_system.current_url)
-        self._navigation_system.url_changed.connect(self.on_url_changed)
+        self.setPlaceholderText("Enter URL")
+        self.__new_url_address_entered = browsing_context.new_url_address_entered
+        browsing_context.web_view_url_changed.connect(self.on_web_view_url_changed)
 
     def keyPressEvent(self, event):
         if event.key() == Qt.Key_Return:
-            self._navigation_system.navigate_to(self.text())
+            self.__new_url_address_entered.emit(self.text())
         else:
             super().keyPressEvent(event)
 
-    @Slot(str)
-    def on_url_changed(self, url: str) -> None:
-        self.setText(url)
+    @Slot(QUrl)
+    def on_web_view_url_changed(self, url: QUrl) -> None:
+        self.setText(url.toString())

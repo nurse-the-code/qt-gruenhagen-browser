@@ -1,12 +1,11 @@
 from PySide6.QtWidgets import QToolBar
 
-from navigation_system import NavigationSystem
 from .address_bar import AddressBar
+from services import BrowsingContext
 
 
 class NavigationBar(QToolBar):
-    def __init__(self, navigation_system: NavigationSystem):
+    def __init__(self, browsing_context: BrowsingContext):
         super().__init__()
-        self._navigation_system: NavigationSystem = navigation_system
         self.setMovable(False)
-        self.addWidget(AddressBar(self._navigation_system))
+        self.addWidget(AddressBar(browsing_context))
