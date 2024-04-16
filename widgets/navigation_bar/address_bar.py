@@ -7,16 +7,24 @@ from services import BrowsingContext
 class AddressBar(QLineEdit):
     def __init__(self, browsing_context: BrowsingContext):
         super().__init__()
+        # In case there is no URL, we set a placeholder text
         self.setPlaceholderText("Enter URL")
+
+        # We get the signal for when the user enters a new URL in the address bar
         self.__new_url_address_entered = browsing_context.new_url_address_entered
+
+        # We listen for when the web view's URL changes
         browsing_context.web_view_url_changed.connect(self.on_web_view_url_changed)
 
     def keyPressEvent(self, event):
         if event.key() == Qt.Key_Return:
+            # When the user presses the Enter key, we emit a signal with the new URL
             self.__new_url_address_entered.emit(self.text())
         else:
+            # Since we're not handling the event, we call the parent class's method
             super().keyPressEvent(event)
 
     @Slot(QUrl)
     def on_web_view_url_changed(self, url: QUrl) -> None:
+        # When the web view's URL changes, we update the address bar's text
         self.setText(url.toString())
