@@ -31,7 +31,7 @@ UI/UX customization and managing cookies and local storage.
 #### High Priority Initial Features
 
 - [x] Address bar
-- [ ] Forward and back buttons (including navigation history)
+- [x] Forward and back buttons (including navigation history)
 - [ ] Dev tools (will unlock more features to implement)
 
 #### Additional Core Features

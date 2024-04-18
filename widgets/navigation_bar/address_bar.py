@@ -14,7 +14,7 @@ class AddressBar(QLineEdit):
         self.__new_url_address_entered: Signal = browsing_context.new_url_address_entered
 
         # We listen for when the web view's URL changes
-        browsing_context.web_view_url_changed.connect(self.on_web_view_url_changed)
+        browsing_context.web_view_url_changed.connect(self.__on_web_view_url_changed)
 
     def keyPressEvent(self, event):
         if event.key() == Qt.Key_Return:
@@ -25,6 +25,6 @@ class AddressBar(QLineEdit):
             super().keyPressEvent(event)
 
     @Slot(QUrl)
-    def on_web_view_url_changed(self, url: QUrl) -> None:
+    def __on_web_view_url_changed(self, url: QUrl) -> None:
         # When the web view's URL changes, we update the address bar's text
         self.setText(url.toString())
