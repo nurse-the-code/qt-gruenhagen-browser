@@ -2,8 +2,9 @@ from PySide6.QtCore import QUrl, Signal
 from PySide6.QtWidgets import QMainWindow
 
 from services import BrowsingContext
-from .web_view import WebView
+
 from .navigation_bar import NavigationBar
+from .web_view import WebView
 
 
 class BrowserWindow(QMainWindow):
@@ -14,7 +15,7 @@ class BrowserWindow(QMainWindow):
         super().__init__()
         # Create the browsing context
         self.__homepage = user_preferences["homepage"]
-        self.__browsing_context: BrowsingContext = self.create_navigation_context()
+        self.__browsing_context: BrowsingContext = BrowsingContext(self.__homepage)
 
         # Create widgets
         self.__web_view: WebView = WebView(self.__browsing_context)
@@ -29,10 +30,3 @@ class BrowserWindow(QMainWindow):
         self.setWindowTitle("Qt Gruenhagen Browser")
         self.addToolBar(self.__navigation_bar)
         self.setCentralWidget(self.__web_view)
-
-    def create_navigation_context(self) -> BrowsingContext:
-        return BrowsingContext(
-            homepage=QUrl(self.__homepage),
-            new_url_address_entered=self.new_url_address_entered,
-            web_view_url_changed=self.web_view_url_changed
-        )

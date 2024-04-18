@@ -1,0 +1,7 @@
+
+<svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Forward arrow">
+    <title>Forward arrow</title>
+    <desc>An arrow icon pointing right, used for navigation forward</desc>
+    <path d="M9 5l7 7-7 7" stroke="#000000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M9 5l7 7-7 7" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

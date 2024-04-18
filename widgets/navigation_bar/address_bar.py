@@ -1,4 +1,4 @@
-from PySide6.QtCore import Qt, QUrl, Slot
+from PySide6.QtCore import Qt, QUrl, Signal, Slot
 from PySide6.QtWidgets import QLineEdit
 
 from services import BrowsingContext
@@ -11,7 +11,7 @@ class AddressBar(QLineEdit):
         self.setPlaceholderText("Enter URL")
 
         # We get the signal for when the user enters a new URL in the address bar
-        self.__new_url_address_entered = browsing_context.new_url_address_entered
+        self.__new_url_address_entered: Signal = browsing_context.new_url_address_entered
 
         # We listen for when the web view's URL changes
         browsing_context.web_view_url_changed.connect(self.on_web_view_url_changed)
