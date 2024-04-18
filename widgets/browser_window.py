@@ -15,8 +15,8 @@ class BrowserWindow(QMainWindow):
         self.__browsing_context: BrowsingContext = BrowsingContext(self.__homepage)
 
         # Create widgets
-        self.__web_view: WebView = WebView(self.__browsing_context)
-        self.__navigation_bar: NavigationBar = NavigationBar(self.__browsing_context)
+        self.__web_view: WebView = WebView(self.__browsing_context, parent=self)
+        self.__navigation_bar: NavigationBar = NavigationBar(self.__browsing_context, parent=self)
 
         self.__create_layout()
 

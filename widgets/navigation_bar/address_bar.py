@@ -5,10 +5,19 @@ from services import BrowsingContext
 
 
 class AddressBar(QLineEdit):
-    def __init__(self, browsing_context: BrowsingContext):
-        super().__init__()
+    def __init__(self, browsing_context: BrowsingContext, parent=None):
+        super().__init__(parent)
         # In case there is no URL, we set a placeholder text
         self.setPlaceholderText("Enter URL")
+
+        self.setStyleSheet("""
+            QLineEdit {
+                height: 32px;
+                padding-left: 16px;
+                padding-right: 16px;
+                border-radius: 16px;
+            }
+        """)
 
         # We get the signal for when the user enters a new URL in the address bar
         self.__new_url_address_entered: Signal = browsing_context.new_url_address_entered

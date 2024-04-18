@@ -5,8 +5,8 @@ from services import BrowsingContext
 
 
 class WebView(QWebEngineView):
-    def __init__(self, browsing_context: BrowsingContext):
-        super().__init__()
+    def __init__(self, browsing_context: BrowsingContext, parent=None):
+        super().__init__(parent)
         # First we unpack signals from the browsing context
         self.__new_url_address_entered = browsing_context.new_url_address_entered
         self.__web_view_url_changed = browsing_context.web_view_url_changed
