@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import QToolBar
 
-from services import BrowsingContext
+from engine import BrowsingContext
 
 from .address_bar import AddressBar
 from .navigate_back_button import NavigateBackButton

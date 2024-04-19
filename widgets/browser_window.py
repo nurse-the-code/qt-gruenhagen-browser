@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import QMainWindow
 
-from services import BrowsingContext
+from engine import BrowsingContext
 
 from .navigation_bar import NavigationBar
 from .web_view import WebView
