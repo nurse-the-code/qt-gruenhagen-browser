@@ -1,0 +1,16 @@
+
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+ <!-- Define the gradient for the border -->
+ <defs>
+  <linearGradient id="borderGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+   <stop offset="0%" style="stop-color:rgb(232,243,242);stop-opacity:1" />
+   <stop offset="100%" style="stop-color:rgb(125,124,123);stop-opacity:1" />
+  </linearGradient>
+ </defs>
+ <!-- Outer rect with gradient border -->
+ <rect x="25" y="25" width="975" height="975" rx="150" fill="none" stroke="url(#borderGradient)" stroke-width="50"/>
+ <!-- Inner rect with black border and background -->
+ <rect x="50" y="50" width="925" height="925" rx="150" fill="#262626" stroke="#000000" stroke-width="50"/>
+ <!-- Text in the middle -->
+ <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="'Shalom Old Style', 'Shalom Stick', sans-serif" fill="#00a67d" font-size="800">ג</text>
+</svg>

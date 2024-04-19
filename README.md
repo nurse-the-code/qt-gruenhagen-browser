@@ -1,3 +1,7 @@
+<div style="text-align: left; margin-top: 1em">
+  <img src="assets/app-icon.svg" alt="Project Icon" width="150"/>
+</div>
+
 # qt-gruenhagen-browser
 
 This is qt-gruenhagen-browser, a project I've started to create a web browser that suits my personal needs. It's built
